@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHuntsTable extends Migration
+class CreateWaypointsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateHuntsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hunts', function (Blueprint $table) {
+        Schema::create('waypoints', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('hunt_id')->constrained();
             $table->text('label');
-            $table->integer('photoNumber');
-            $table->text('description');
+            $table->decimal('lat', 8, 6);
+            $table->decimal('lng', 8, 6);
+            $table->text('question');
+            $table->text('answer');
+            $table->integer('order');
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateHuntsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hunts');
+        Schema::dropIfExists('waypoints');
     }
 }

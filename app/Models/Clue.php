@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hunt extends Model
+class Clue extends Model
 {
     use HasFactory;
 
-    protected $table = 'hunts';
+    protected $table = 'clues';
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
-
-    public function waypoints() {
-        return $this->hasMany(Waypoint::class);
-    }
 }

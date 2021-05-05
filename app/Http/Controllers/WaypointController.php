@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hunt;
+use App\Models\Waypoint;
 use Illuminate\Http\Request;
 
-class HuntController extends Controller
+class WaypointController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class HuntController extends Controller
      */
     public function index()
     {
-        return Hunt::all();
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class HuntController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Hunt  $hunt
+     * @param  \App\Models\Waypoint  $waypoint
      * @return \Illuminate\Http\Response
      */
-    public function show(Hunt $hunt)
+    public function show(Waypoint $waypoint)
     {
         //
     }
@@ -52,10 +52,10 @@ class HuntController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Hunt  $hunt
+     * @param  \App\Models\Waypoint  $waypoint
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hunt $hunt)
+    public function edit(Waypoint $waypoint)
     {
         //
     }
@@ -64,10 +64,10 @@ class HuntController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Hunt  $hunt
+     * @param  \App\Models\Waypoint  $waypoint
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hunt $hunt)
+    public function update(Request $request, Waypoint $waypoint)
     {
         //
     }
@@ -75,10 +75,10 @@ class HuntController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Hunt  $hunt
+     * @param  \App\Models\Waypoint  $waypoint
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hunt $hunt)
+    public function destroy(Waypoint $waypoint)
     {
         //
     }
