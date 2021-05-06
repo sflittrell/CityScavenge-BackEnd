@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Waypoint;
+use App\Models\UserGroupHunt;
+use App\Models\User;
+use App\Models\Hunt;
 use Illuminate\Http\Request;
 
-class WaypointController extends Controller
+class UserGroupHuntController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,7 @@ class WaypointController extends Controller
      */
     public function index()
     {
-        //
+        return UserGroupHunt::all();
     }
 
     /**
@@ -22,9 +24,14 @@ class WaypointController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $userGroupHunt = new UserGroupHunt;
+        $userGroupHunt->user_id = $request->user_id;
+        $userGroupHunt->hunt_id = $request->hunt_id;
+
+        $userGroupHunt->save();
+        return $userGroupHunt;
     }
 
     /**
@@ -41,22 +48,23 @@ class WaypointController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Waypoint  $waypoint
+     * @param  \App\Models\UserGroupHunt  $userGroupHunt
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $waypoint = Waypoint::where('hunt_id', $id)->get();
-        return $waypoint;
+        $hunt = UserGroupHunt::where('user_is', $id)->get();
+        return $hunt;
     }
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Waypoint  $waypoint
+     * @param  \App\Models\UserGroupHunt  $userGroupHunt
      * @return \Illuminate\Http\Response
      */
-    public function edit(Waypoint $waypoint)
+    public function edit(UserGroupHunt $userGroupHunt)
     {
         //
     }
@@ -65,10 +73,10 @@ class WaypointController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Waypoint  $waypoint
+     * @param  \App\Models\UserGroupHunt  $userGroupHunt
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Waypoint $waypoint)
+    public function update(Request $request, UserGroupHunt $userGroupHunt)
     {
         //
     }
@@ -76,10 +84,10 @@ class WaypointController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Waypoint  $waypoint
+     * @param  \App\Models\UserGroupHunt  $userGroupHunt
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Waypoint $waypoint)
+    public function destroy(UserGroupHunt $userGroupHunt)
     {
         //
     }

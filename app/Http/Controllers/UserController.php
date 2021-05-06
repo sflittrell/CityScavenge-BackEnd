@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    public function index(Request $request)
+    {
+        return $request->user();
+    }
+
     public function register(Request $request)
     {
         Log::debug($request);
@@ -47,5 +53,9 @@ class UserController extends Controller
         } else {
             return response()->json(['error' => 'api.something_went_wrong'], 500);
         }
+    }
+
+    public function userId($request)
+    {
     }
 }

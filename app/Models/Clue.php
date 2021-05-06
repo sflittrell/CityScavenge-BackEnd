@@ -13,4 +13,8 @@ class Clue extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
+
+    public function waypoint() {
+        return $this->belongsTo(Waypoint::class);
+    }
 }

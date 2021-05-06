@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
           HuntSeeder::class,
           WaypointSeeder::class,
           ClueSeeder::class,
+          UserGroupHuntSeeder::class,
         ]);
     }
 }

@@ -17,4 +17,8 @@ class Waypoint extends Model
     public function hunt() {
         return $this->belongsTo(Hunt::class);
     }
+
+    public function clues() {
+        return $this->hasMany(Clue::class);
+    }
 }

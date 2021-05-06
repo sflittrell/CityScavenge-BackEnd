@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hunt extends Model
+class UserGroupHunt extends Model
 {
     use HasFactory;
 
-    protected $table = 'hunts';
+    protected $table = 'user_group_hunts';
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
 
-    public function waypoints() {
-        return $this->hasMany(Waypoint::class);
+    public function users() {
+        return $this->hasMany(User::class);
     }
 
-    public function userGroupHunts() {
-        return $this->hasMany(userGroupHunt::class);
+    public function hunts() {
+        return $this->hasMany(UserGroupHunt::class);
     }
 }
