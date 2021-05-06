@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\UserGroupHunt;
 use App\Models\User;
 use App\Models\Hunt;
+use App\Models\Waypoint;
+use App\Models\Clue;
 use Illuminate\Http\Request;
 
 class UserGroupHuntController extends Controller
@@ -53,7 +55,7 @@ class UserGroupHuntController extends Controller
      */
     public function show($id)
     {
-        $hunt = UserGroupHunt::where('user_is', $id)->get();
+        $hunt = UserGroupHunt::where('user_id', $id)->get();
         return $hunt;
     }
 

@@ -14,11 +14,15 @@ class UserGroupHunt extends Model
     public $incrementing = true;
     public $timestamps = true;
 
+    protected $with = [
+        'hunts'
+    ];
+
     public function users() {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function hunts() {
-        return $this->hasMany(UserGroupHunt::class);
+        return $this->belongsTo(Hunt::class, 'hunt_id', 'id');
     }
 }

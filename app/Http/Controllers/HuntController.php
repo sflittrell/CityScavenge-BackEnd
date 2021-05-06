@@ -44,9 +44,10 @@ class HuntController extends Controller
      * @param  \App\Models\Hunt  $hunt
      * @return \Illuminate\Http\Response
      */
-    public function show(Hunt $hunt)
+    public function show($id)
     {
-        //
+        $hunt = Hunt::where('user_id', $id)->get();
+        return $hunt;
     }
 
     /**

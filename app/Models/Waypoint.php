@@ -13,12 +13,15 @@ class Waypoint extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
+    protected $with = [
+        'clues'
+    ];
 
     public function hunt() {
         return $this->belongsTo(Hunt::class);
     }
 
     public function clues() {
-        return $this->hasMany(Clue::class);
+        return $this->hasMany(Clue::class, 'waypoint_id', 'id');
     }
 }

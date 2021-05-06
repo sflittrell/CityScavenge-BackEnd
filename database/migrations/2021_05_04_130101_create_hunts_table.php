@@ -18,6 +18,7 @@ class CreateHuntsTable extends Migration
             $table->text('label');
             $table->integer('photoNumber');
             $table->text('description');
+            $table->text('status')->nullable();
             $table->timestamps();
         });
     }

@@ -17,32 +17,38 @@ class HuntSeeder extends Seeder
         Hunt::create([
             'label' => 'Demo Hunt',
             'photoNumber' => '1',
-            'description' => 'An amazing adventure you won\'t want to miss'
+            'description' => 'An amazing adventure you won\'t want to miss',
+
         ]);
         Hunt::create([
             'label' => 'Monster Hunt',
             'photoNumber' => '2',
-            'description' => 'An amazing adventure you won\'t want to miss'
+            'description' => 'An amazing adventure you won\'t want to miss',
+            'status' => 'Coming Soon'
         ]);
         Hunt::create([
             'label' => 'Treasuer Hunt',
             'photoNumber' => '3',
-            'description' => 'An amazing adventure you won\'t want to miss'
+            'description' => 'An amazing adventure you won\'t want to miss',
+            'status' => 'Coming Soon'
         ]);
         Hunt::create([
             'label' => 'City Tour',
             'photoNumber' => '4',
-            'description' => 'An amazing adventure you won\'t want to miss'
+            'description' => 'An amazing adventure you won\'t want to miss',
+            'status' => 'Coming Soon'
         ]);
         Hunt::create([
             'label' => 'Pub Crawl',
             'photoNumber' => '5',
-            'description' => 'An amazing adventure you won\'t want to miss'
+            'description' => 'An amazing adventure you won\'t want to miss',
+            'status' => 'Coming Soon'
         ]);
         Hunt::create([
-            'label' => 'Birthday Surprise',
+            'label' => 'Birthdays',
             'photoNumber' => '6',
-            'description' => 'An amazing adventure you won\'t want to miss'
+            'description' => 'An amazing adventure you won\'t want to miss',
+            'status' => 'Coming Soon'
         ]);
     }
 }

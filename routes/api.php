@@ -31,10 +31,11 @@ Route::get('/hunts', [HuntController::class, 'index']);
 Route::group(['middleware' => ['auth:api']], function () {
     Route::get('/user', [UserController::class, 'index']);
     Route::get('/logout', [UserController::class, 'logout']);
-    Route::post('/hunt/create/', [UserGroupHuntController::class, 'create']);
+    Route::post('/hunt/create', [UserGroupHuntController::class, 'create']);
+    Route::get('/hunt/show/{id}', [UserGroupHuntController::class, 'show']);
+    Route::get('/hunt/all', [UserGroupHuntController::class, 'index']);
 });
 
 Route::get('/waypoints/show/{id}', [WaypointController::class, 'show']);
 
-Route::get('/hunt/show/{id}', [UserGroupHuntController::class, 'show']);
 

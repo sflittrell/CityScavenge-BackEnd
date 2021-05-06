@@ -14,8 +14,12 @@ class Hunt extends Model
     public $incrementing = true;
     public $timestamps = true;
 
+    protected $with = [
+        'waypoints'
+    ];
+
     public function waypoints() {
-        return $this->hasMany(Waypoint::class);
+        return $this->hasMany(Waypoint::class, 'hunt_id', 'id');
     }
 
     public function userGroupHunts() {
