@@ -17,7 +17,7 @@ class CreateUserGroupHuntsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('hunt_id')->constrained();
-            $table->timestamp('completed');
+            $table->dateTime('completed')->nullable();
             $table->timestamps();
         });
     }

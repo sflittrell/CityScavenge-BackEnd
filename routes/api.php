@@ -29,13 +29,15 @@ Route::post('/register', [UserController::class, 'register']);
 Route::get('/hunts', [HuntController::class, 'index']);
 
 Route::group(['middleware' => ['auth:api']], function () {
-    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
     Route::get('/logout', [UserController::class, 'logout']);
-    Route::post('/hunt/create', [UserGroupHuntController::class, 'create']);
-    Route::get('/hunt/show/{id}', [UserGroupHuntController::class, 'show']);
-    Route::get('/hunt/all', [UserGroupHuntController::class, 'index']);
+    Route::post('/userhunt/create', [UserGroupHuntController::class, 'create']);
+    Route::get('/userhunt/show/{id}', [UserGroupHuntController::class, 'show']);
+    Route::post('/userhunt/update/{id}', [UserGroupHuntController::class, 'update']);
+    Route::get('/userhunt/all', [UserGroupHuntController::class, 'index']);
+    Route::get('/hunt/show/{id}', [HuntController::class, 'show']);
 });
 
 Route::get('/waypoints/show/{id}', [WaypointController::class, 'show']);
-
-

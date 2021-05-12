@@ -24,7 +24,7 @@ class ClueSeeder extends Seeder
         Clue::create([
             'waypoint_id' => 2,
             'label' => 'D-W2-C1',
-            'clueText' => 'Demo FIRST clue for Demo Waypoint, Awesome Inc',
+            'clueText' => 'Demo Second clue for Demo Waypoint, Awesome Inc',
             'distance' => 0,
             'order' => 1,
         ]);

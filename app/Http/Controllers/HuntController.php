@@ -46,8 +46,8 @@ class HuntController extends Controller
      */
     public function show($id)
     {
-        $hunt = Hunt::where('user_id', $id)->get();
-        return $hunt;
+        $hunt = Hunt::find($id);
+        return $hunt();
     }
 
     /**

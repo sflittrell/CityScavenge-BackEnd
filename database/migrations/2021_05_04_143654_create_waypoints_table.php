@@ -19,6 +19,7 @@ class CreateWaypointsTable extends Migration
             $table->text('label');
             $table->decimal('lat', 8, 6);
             $table->decimal('lng', 8, 6);
+            $table->integer('distance');
             $table->text('question');
             $table->text('answer');
             $table->integer('order');

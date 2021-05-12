@@ -29,11 +29,13 @@ class UserGroupHuntController extends Controller
     public function create(Request $request)
     {
         $userGroupHunt = new UserGroupHunt;
-        $userGroupHunt->user_id = $request->user_id;
+        $userGroupHunt->user_id = $request->user()->id;
         $userGroupHunt->hunt_id = $request->hunt_id;
 
         $userGroupHunt->save();
-        return $userGroupHunt;
+        $tempGroupHunt = UserGroupHunt::find($userGroupHunt->id);
+        // $tempGroupHunt = Hunt::where('id', $request->hunt_id)->get();
+        return $tempGroupHunt;
     }
 
     /**
@@ -55,7 +57,7 @@ class UserGroupHuntController extends Controller
      */
     public function show($id)
     {
-        $hunt = UserGroupHunt::where('user_id', $id)->get();
+        $hunt = UserGroupHunt::find($id);
         return $hunt;
     }
 
@@ -78,9 +80,12 @@ class UserGroupHuntController extends Controller
      * @param  \App\Models\UserGroupHunt  $userGroupHunt
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserGroupHunt $userGroupHunt)
+    public function update(Request $request, $id)
     {
-        //
+        $hunt = UserGroupHunt::find($id);
+        $hunt->completed = $request->completed;
+        $hunt->save();
+        return $hunt;
     }
 
     /**
