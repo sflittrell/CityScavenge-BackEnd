@@ -17,14 +17,14 @@ class ClueSeeder extends Seeder
         Clue::create([
             'waypoint_id' => 1,
             'label' => 'D-W1-C1',
-            'clueText' => 'Demo FIRST clue for Demo Waypoint, Annex',
+            'clueText' => 'It\'s just a hop skip and a jump to your next destination. If mimosas are your thing this is the placee for you. Take a step outside and you\'ll see.',
             'distance' => 0,
             'order' => 1,
         ]);
         Clue::create([
             'waypoint_id' => 2,
             'label' => 'D-W2-C1',
-            'clueText' => 'Demo Second clue for Demo Waypoint, Awesome Inc',
+            'clueText' => 'Return to where it all began. What you seek is VALUED by all.',
             'distance' => 0,
             'order' => 1,
         ]);

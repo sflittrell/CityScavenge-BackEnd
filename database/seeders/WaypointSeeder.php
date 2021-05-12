@@ -20,17 +20,17 @@ class WaypointSeeder extends Seeder
         'lat' => 38.0419307,
         'lng' => -84.4921300,
         'distance' => 40,
-        'question' => 'First Question: How many pages in the library logo',
+        'question' => 'Find the sign of the Scavenge, tell me how many sides it has (please spell out the answer).',
         'answer' => '6',
         'order' => 1]);
         Waypoint::create([
         'hunt_id' => 1,
         'label' => 'Demo Waypoint, Awesome Inc',
-        'lat' => 38.0422029,
-        'lng' => -84.4923681,
-        'distance' => 40,
-        'question' => 'Second Question: How many pages in the library logo',
-        'answer' => '6',
+        'lat' => 38.0421607,
+        'lng' => -84.4924384,
+        'distance' => 50,
+        'question' => 'How many Awesome Inc core values are there (please spell out the answer).',
+        'answer' => '4',
         'order' => 1]);
         Waypoint::create([
         'hunt_id' => 2,
